@@ -32,7 +32,7 @@ export default function HomePage() {
           padding: "32px",
           color: "#ffffff",
           textAlign: "center",
-          fontFamily: "system-ui, -apple-system, BlinkMacSystemFont",
+          fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial",
         }}
       >
         {/* Logo */}
@@ -65,11 +65,11 @@ export default function HomePage() {
             fontSize: "1.1rem",
             lineHeight: 1.6,
             opacity: 0.95,
-            marginBottom: 36,
+            marginBottom: 28,
           }}
         >
-          Discover football fixtures. Build trips. Compare flights, hotels and
-          tickets across Europe.
+          Discover football fixtures. Build trips. Compare flights, hotels and tickets across
+          Europe.
         </p>
 
         {/* Buttons */}
@@ -79,6 +79,7 @@ export default function HomePage() {
             gap: 16,
             flexWrap: "wrap",
             justifyContent: "center",
+            marginBottom: 22,
           }}
         >
           <div
@@ -96,16 +97,30 @@ export default function HomePage() {
             style={{
               padding: "14px 28px",
               borderRadius: 10,
-              background: "#2a2a2a",
-              border: "1px solid #555",
+              background: "rgba(42,42,42,0.75)",
+              border: "1px solid rgba(255,255,255,0.22)",
               fontWeight: 600,
+              backdropFilter: "blur(6px)",
+              WebkitBackdropFilter: "blur(6px)",
             }}
           >
             Android App — Coming Soon
           </div>
         </div>
 
-        
+        {/* Affiliate disclosure (homepage) */}
+        <p
+          style={{
+            maxWidth: 760,
+            fontSize: 13,
+            lineHeight: 1.5,
+            color: "rgba(255,255,255,0.72)",
+            margin: 0,
+          }}
+        >
+          Affiliate disclosure: YourNextAway may earn a commission from partner links at no extra
+          cost to you.
+        </p>
       </div>
     </main>
   );
