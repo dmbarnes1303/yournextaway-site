@@ -1,6 +1,4 @@
-// app/layout.tsx
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
 import React from "react";
 
@@ -13,35 +11,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const footerLinkStyle: React.CSSProperties = {
-    color: "rgba(255,255,255,0.85)",
-    textDecoration: "none",
-  };
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* Privacy-friendly analytics by Plausible */}
+        {/* Plausible Analytics */}
         <Script
-          strategy="afterInteractive"
-          src="https://plausible.io/js/pa-rpYAauHxWVcBt1XGJZ9a2.js"
+          strategy="beforeInteractive"
+          defer
+          data-domain="yournextaway.com"
+          src="https://plausible.io/js/script.js"
         />
-        <Script id="plausible-init" strategy="afterInteractive">
-          {`
-            window.plausible = window.plausible || function () {
-              (plausible.q = plausible.q || []).push(arguments)
-            };
-            plausible.init = plausible.init || function (i) {
-              plausible.o = i || {};
-            };
-            plausible.init();
-          `}
-        </Script>
       </head>
 
       <body
@@ -78,19 +58,22 @@ export default function RootLayout({
             </div>
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/about" style={footerLinkStyle}>
+              <a href="/about" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 About
-              </Link>
-              <Link href="/privacy" style={footerLinkStyle}>
+              </a>
+              <a href="/privacy" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 Privacy
-              </Link>
-              <Link href="/terms" style={footerLinkStyle}>
+              </a>
+              <a href="/terms" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 Terms
-              </Link>
-              <Link href="/contact" style={footerLinkStyle}>
+              </a>
+              <a href="/contact" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 Contact
-              </Link>
-              <a href="mailto:hello@yournextaway.com" style={footerLinkStyle}>
+              </a>
+              <a
+                href="mailto:hello@yournextaway.com"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 hello@yournextaway.com
               </a>
             </div>
