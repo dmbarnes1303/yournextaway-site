@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
-import Script from "next/script";
 import React from "react";
+import Script from "next/script";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "YourNextAway – Football Trip Planner",
   description:
     "Discover football fixtures. Build trips. Compare flights, hotels and tickets across Europe.",
@@ -11,17 +10,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
-        {/* Plausible Analytics */}
+        {/* Plausible */}
         <Script
-          strategy="beforeInteractive"
-          defer
-          data-domain="yournextaway.com"
-          src="https://plausible.io/js/script.js"
+          src="https://plausible.io/js/pa-rpYAauHxWVcBt1XGJZ9a2.js"
+          strategy="afterInteractive"
         />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+            window.plausible = window.plausible || function () {
+              (plausible.q = plausible.q || []).push(arguments)
+            };
+            plausible.init = plausible.init || function (i) { plausible.o = i || {}; };
+            plausible.init();
+          `}
+        </Script>
       </head>
 
       <body
@@ -52,22 +62,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               fontSize: 13,
             }}
           >
-            <div>
-              © {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila
-              Ltd.
-            </div>
+            <div>© {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila Ltd.</div>
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a href="/about" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 About
               </a>
-              <a href="/privacy" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+              <a
+                href="/privacy"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 Privacy
               </a>
               <a href="/terms" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 Terms
               </a>
-              <a href="/contact" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+              <a
+                href="/contact"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 Contact
               </a>
               <a
