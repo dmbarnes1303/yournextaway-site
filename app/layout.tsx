@@ -12,9 +12,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const linkStyle: React.CSSProperties = {
+    color: "rgba(255,255,255,0.85)",
+    textDecoration: "none",
+  };
+
   return (
     <html lang="en">
-      <body style={{ margin: 0, fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial" }}>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial",
+        }}
+      >
         {children}
 
         <footer
@@ -37,22 +47,24 @@ export default function RootLayout({
               fontSize: 13,
             }}
           >
-            <div>© {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila Ltd.</div>
+            <div>
+              © {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila Ltd.
+            </div>
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <a href="/about" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+              <a href="/about" style={linkStyle}>
                 About
               </a>
-              <a href="/privacy" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+              <a href="/privacy" style={linkStyle}>
                 Privacy
               </a>
-              <a href="/terms" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+              <a href="/terms" style={linkStyle}>
                 Terms
               </a>
-              <a
-                href="mailto:hello@yournextaway.com"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-              >
+              <a href="/contact" style={linkStyle}>
+                Contact
+              </a>
+              <a href="mailto:hello@yournextaway.com" style={linkStyle}>
                 hello@yournextaway.com
               </a>
             </div>
