@@ -9,7 +9,11 @@ export default function PrivacyPage() {
           YourNextAway (“we”, “us”, “our”) is operated by <strong>Diablo Aquila Ltd</strong> (United Kingdom).
           This policy explains how we collect, use, store, and protect your information.
         </p>
+Affiliate Disclosure
 
+YourNextAway contains affiliate links. This means we may earn a commission when you click on links to third-party travel providers (such as flights, hotels, tickets, or insurance) and make a purchase, at no additional cost to you.
+
+These commissions help support the development and operation of the platform.
         <h2 style={{ marginTop: 28 }}>1. Information We Collect</h2>
         <ul style={{ lineHeight: 1.8, opacity: 0.92 }}>
           <li>Email address (if you contact us or join updates)</li>
