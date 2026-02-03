@@ -1,4 +1,10 @@
-export const metadata = {
+// app/layout.tsx
+import type { Metadata } from "next";
+import Link from "next/link";
+import Script from "next/script";
+import React from "react";
+
+export const metadata: Metadata = {
   title: "YourNextAway – Football Trip Planner",
   description:
     "Discover football fixtures. Build trips. Compare flights, hotels and tickets across Europe.",
@@ -12,13 +18,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const linkStyle: React.CSSProperties = {
+  const footerLinkStyle: React.CSSProperties = {
     color: "rgba(255,255,255,0.85)",
     textDecoration: "none",
   };
 
   return (
     <html lang="en">
+      <head>
+        {/* Privacy-friendly analytics by Plausible */}
+        <Script
+          strategy="afterInteractive"
+          src="https://plausible.io/js/pa-rpYAauHxWVcBt1XGJZ9a2.js"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+            window.plausible = window.plausible || function () {
+              (plausible.q = plausible.q || []).push(arguments)
+            };
+            plausible.init = plausible.init || function (i) {
+              plausible.o = i || {};
+            };
+            plausible.init();
+          `}
+        </Script>
+      </head>
+
       <body
         style={{
           margin: 0,
@@ -48,23 +73,24 @@ export default function RootLayout({
             }}
           >
             <div>
-              © {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila Ltd.
+              © {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila
+              Ltd.
             </div>
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <a href="/about" style={linkStyle}>
+              <Link href="/about" style={footerLinkStyle}>
                 About
-              </a>
-              <a href="/privacy" style={linkStyle}>
+              </Link>
+              <Link href="/privacy" style={footerLinkStyle}>
                 Privacy
-              </a>
-              <a href="/terms" style={linkStyle}>
+              </Link>
+              <Link href="/terms" style={footerLinkStyle}>
                 Terms
-              </a>
-              <a href="/contact" style={linkStyle}>
+              </Link>
+              <Link href="/contact" style={footerLinkStyle}>
                 Contact
-              </a>
-              <a href="mailto:hello@yournextaway.com" style={linkStyle}>
+              </Link>
+              <a href="mailto:hello@yournextaway.com" style={footerLinkStyle}>
                 hello@yournextaway.com
               </a>
             </div>
