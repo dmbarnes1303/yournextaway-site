@@ -61,7 +61,7 @@ export default function CityIndexPage() {
                 display: "inline-block",
               }}
             />
-            City guides
+            City Guides
           </div>
 
           <h1
@@ -72,7 +72,7 @@ export default function CityIndexPage() {
               margin: "0 0 10px",
             }}
           >
-            Choose a city
+            Choose a City
           </h1>
 
           <p
@@ -123,7 +123,7 @@ export default function CityIndexPage() {
                 {c.note}
               </div>
               <div style={{ marginTop: 12, fontSize: 12, fontWeight: 800, opacity: 0.92 }}>
-                Open guide →
+                Open Guide →
               </div>
             </a>
           ))}
@@ -141,8 +141,9 @@ export default function CityIndexPage() {
           }}
         >
           <div style={{ fontWeight: 850, fontSize: 15, marginBottom: 8 }}>
-            Build your trip (fast)
+            Build Your Trip (Fast)
           </div>
+
           <ul
             style={{
               margin: 0,
@@ -158,34 +159,36 @@ export default function CityIndexPage() {
                 href="/flights"
                 style={{ color: "rgba(255,255,255,0.92)", textDecoration: "underline" }}
               >
-                flights
+                Flights
               </a>{" "}
               and{" "}
               <a
                 href="/hotels"
                 style={{ color: "rgba(255,255,255,0.92)", textDecoration: "underline" }}
               >
-                hotels
+                Hotels
               </a>{" "}
               for your dates.
             </li>
+
             <li>
               Then book 1–2 things on{" "}
               <a
                 href="/tickets"
                 style={{ color: "rgba(255,255,255,0.92)", textDecoration: "underline" }}
               >
-                tickets & experiences
+                Tickets &amp; Experiences
               </a>{" "}
               around your match.
             </li>
+
             <li>
               Match tickets live on{" "}
               <a
                 href="/football-tickets"
                 style={{ color: "rgba(255,255,255,0.92)", textDecoration: "underline" }}
               >
-                football-tickets
+                Football Tickets
               </a>
               .
             </li>
