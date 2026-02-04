@@ -1,67 +1,76 @@
-// app/contact/page.tsx
-export const metadata = {
-  title: "Contact – YourNextAway",
-  description: "Contact the YourNextAway team.",
-};
-
 export default function ContactPage() {
-  return (
-    <main
-      style={{
-        minHeight: "calc(100vh - 72px)",
-        background: "#05070d",
-        color: "white",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "60px 20px",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 820,
-          borderRadius: 18,
-          padding: "26px 22px",
-          background: "rgba(255,255,255,0.06)",
-          border: "1px solid rgba(255,255,255,0.10)",
-          boxShadow: "0 12px 40px rgba(0,0,0,0.35)",
-        }}
-      >
-        <h1 style={{ margin: 0, fontSize: 42, letterSpacing: 0.2 }}>Contact</h1>
+  const styles: Record<string, React.CSSProperties> = {
+    page: {
+      minHeight: "100vh",
+      background: "#0b1020",
+      color: "white",
+      padding: "56px 20px",
+      fontFamily:
+        "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif",
+    },
+    container: { maxWidth: 920, margin: "0 auto" },
+    h1: { fontSize: 40, margin: "0 0 10px", fontWeight: 850, letterSpacing: "-0.02em" },
+    p: { lineHeight: 1.75, opacity: 0.92, margin: "12px 0" },
+    card: {
+      marginTop: 18,
+      padding: "18px 16px",
+      borderRadius: 14,
+      background: "rgba(255,255,255,0.06)",
+      border: "1px solid rgba(255,255,255,0.10)",
+    },
+    row: { display: "flex", flexWrap: "wrap", gap: 12, alignItems: "baseline" },
+    label: { width: 140, opacity: 0.75, fontSize: 13 },
+    value: { fontSize: 15, opacity: 0.95 },
+    link: { color: "white" },
+    footer: {
+      marginTop: 34,
+      paddingTop: 18,
+      borderTop: "1px solid rgba(255,255,255,0.10)",
+      opacity: 0.8,
+      lineHeight: 1.6,
+      fontSize: 13,
+    },
+  };
 
-        <p style={{ marginTop: 12, color: "rgba(255,255,255,0.80)", fontSize: 16, lineHeight: 1.6 }}>
-          For enquiries, partnerships, affiliate questions, or press, email us and we’ll get back to you.
+  return (
+    <main style={styles.page}>
+      <div style={styles.container}>
+        <h1 style={styles.h1}>Contact</h1>
+        <p style={styles.p}>
+          For support, partnerships, or affiliate enquiries, use the contact details below.
         </p>
 
-        <div
-          style={{
-            marginTop: 18,
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 10,
-            padding: "12px 14px",
-            borderRadius: 14,
-            background: "rgba(0,255,140,0.10)",
-            border: "1px solid rgba(0,255,140,0.22)",
-          }}
-        >
-          <span style={{ color: "rgba(255,255,255,0.85)" }}>Email:</span>
-          <a
-            href="mailto:hello@yournextaway.com"
-            style={{
-              color: "rgba(255,255,255,0.95)",
-              textDecoration: "none",
-              fontWeight: 700,
-            }}
-          >
+        <div style={styles.card}>
+          <div style={styles.row}>
+            <div style={styles.label}>Email</div>
+            <div style={styles.value}>
+              <a href="mailto:hello@yournextaway.com" style={styles.link}>
+                hello@yournextaway.com
+              </a>
+            </div>
+          </div>
+
+          <div style={{ height: 12 }} />
+
+          <div style={styles.row}>
+            <div style={styles.label}>Operator</div>
+            <div style={styles.value}>Diablo Aquila Ltd (UK)</div>
+          </div>
+
+          <div style={{ height: 12 }} />
+
+          <div style={styles.row}>
+            <div style={styles.label}>Company No</div>
+            <div style={styles.value}>17010899</div>
+          </div>
+        </div>
+
+        <div style={styles.footer}>
+          Diablo Aquila Ltd (UK) — Company No: 17010899 —{" "}
+          <a href="mailto:hello@yournextaway.com" style={styles.link}>
             hello@yournextaway.com
           </a>
         </div>
-
-        <p style={{ marginTop: 18, color: "rgba(255,255,255,0.55)", fontSize: 13 }}>
-          Operated by Diablo Aquila Ltd (United Kingdom).
-        </p>
       </div>
     </main>
   );

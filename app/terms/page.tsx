@@ -1,74 +1,106 @@
 export default function TermsPage() {
+  const styles: Record<string, React.CSSProperties> = {
+    page: {
+      minHeight: "100vh",
+      background: "#0b1020",
+      color: "white",
+      padding: "56px 20px",
+      fontFamily:
+        "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif",
+    },
+    container: { maxWidth: 920, margin: "0 auto" },
+    h1: { fontSize: 40, margin: "0 0 10px", fontWeight: 850, letterSpacing: "-0.02em" },
+    meta: { opacity: 0.8, margin: "0 0 26px", lineHeight: 1.6 },
+    p: { lineHeight: 1.75, opacity: 0.92, margin: "12px 0" },
+    h2: { marginTop: 26, marginBottom: 10, fontSize: 20, fontWeight: 800 },
+    list: { lineHeight: 1.85, opacity: 0.92, margin: "10px 0 0 18px" },
+    link: { color: "white" },
+    footer: {
+      marginTop: 34,
+      paddingTop: 18,
+      borderTop: "1px solid rgba(255,255,255,0.10)",
+      opacity: 0.8,
+      lineHeight: 1.6,
+      fontSize: 13,
+    },
+  };
+
   return (
-    <main style={{ minHeight: "100vh", background: "#0b1020", color: "white", padding: "56px 20px" }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <h1 style={{ fontSize: 40, margin: "0 0 10px", fontWeight: 800 }}>Terms of Service</h1>
-        <p style={{ opacity: 0.8, margin: "0 0 26px" }}>Last updated: 3 February 2026</p>
+    <main style={styles.page}>
+      <div style={styles.container}>
+        <h1 style={styles.h1}>Terms of Service</h1>
+        <p style={styles.meta}>Last updated: 3 February 2026</p>
 
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          By using YourNextAway, you agree to these Terms. YourNextAway is operated by <strong>Diablo Aquila Ltd</strong>{" "}
-          (United Kingdom). If you do not agree, do not use the Services.
+        <p style={styles.p}>
+          These Terms of Service (“Terms”) apply to YourNextAway (the “Service”), operated by{" "}
+          <strong>Diablo Aquila Ltd</strong> (United Kingdom), <strong>Company No: 17010899</strong>.
+          By using the Service, you agree to these Terms.
         </p>
 
-        <h2 style={{ marginTop: 28 }}>1. Service Description</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          YourNextAway provides football fixture discovery, travel planning tools, and links to third-party services. We
-          do not sell tickets, flights, or hotels directly.
+        <h2 style={styles.h2}>1. What we provide</h2>
+        <p style={styles.p}>
+          YourNextAway helps users discover football fixtures and plan trips by linking to third-party
+          providers (for example flights, hotels, tickets, experiences, and insurance). We may earn
+          commission from partner links (see Affiliate Disclosure).
         </p>
 
-        <h2 style={{ marginTop: 28 }}>2. Eligibility</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>You must be at least <strong>16 years old</strong>.</p>
-
-        <h2 style={{ marginTop: 28 }}>3. No Guarantees</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          We do not guarantee the accuracy of third-party data, availability of matches, or prices shown by partners.
-          Purchases are between you and the provider.
-        </p>
-
-        <h2 style={{ marginTop: 28 }}>4. Affiliate Relationships</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          Some links generate commission. This does not affect prices you pay.
-        </p>
-
-        <h2 style={{ marginTop: 28 }}>5. Future Paid Features</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          We may introduce subscriptions or premium features in the future. Details will be presented before purchase.
-        </p>
-
-        <h2 style={{ marginTop: 28 }}>6. Prohibited Use</h2>
-        <ul style={{ lineHeight: 1.8, opacity: 0.92 }}>
-          <li>Abuse the service</li>
-          <li>Attempt to hack or reverse engineer</li>
-          <li>Use bots or scraping</li>
-          <li>Use the app for unlawful purposes</li>
+        <h2 style={styles.h2}>2. Affiliate links & third-party providers</h2>
+        <ul style={styles.list}>
+          <li>
+            Purchases are made directly with third-party providers. We do not sell or fulfil travel
+            products.
+          </li>
+          <li>
+            Prices, availability, and booking terms are set by providers and may change without notice.
+          </li>
+          <li>
+            We are not responsible for third-party services, delays, cancellations, refunds, or
+            disputes.
+          </li>
         </ul>
 
-        <h2 style={{ marginTop: 28 }}>7. Intellectual Property</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          All branding, logos, design, and content belong to Diablo Aquila Ltd. You may not copy or redistribute without
-          permission.
+        <h2 style={styles.h2}>3. Accuracy & availability</h2>
+        <p style={styles.p}>
+          We aim to keep information accurate, but fixtures, schedules, and travel availability can
+          change. The Service is provided on an “as is” basis and may be updated, modified, or
+          interrupted.
         </p>
 
-        <h2 style={{ marginTop: 28 }}>8. Limitation of Liability</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          We are not liable for missed matches, cancelled events, financial losses, or third-party service failures. Use
-          at your own risk.
+        <h2 style={styles.h2}>4. Acceptable use</h2>
+        <ul style={styles.list}>
+          <li>Do not misuse the Service or attempt to disrupt its operation.</li>
+          <li>Do not use automated scraping or abuse partner links.</li>
+          <li>Do not upload unlawful content or violate third-party rights.</li>
+        </ul>
+
+        <h2 style={styles.h2}>5. Liability</h2>
+        <p style={styles.p}>
+          To the fullest extent permitted by law, Diablo Aquila Ltd is not liable for indirect or
+          consequential losses arising from use of the Service or third-party providers. Nothing in
+          these Terms limits liability where it cannot be excluded by law.
         </p>
 
-        <h2 style={{ marginTop: 28 }}>9. Termination</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          We may suspend access for abuse or violations.
+        <h2 style={styles.h2}>6. Changes</h2>
+        <p style={styles.p}>
+          We may update these Terms from time to time. Continued use of the Service after changes
+          means you accept the updated Terms.
         </p>
 
-        <h2 style={{ marginTop: 28 }}>10. Governing Law</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>United Kingdom law applies.</p>
-
-        <h2 style={{ marginTop: 28 }}>11. Contact</h2>
-        <p style={{ lineHeight: 1.7, opacity: 0.92 }}>
-          <a href="mailto:hello@yournextaway.com" style={{ color: "white" }}>
+        <h2 style={styles.h2}>7. Contact</h2>
+        <p style={styles.p}>
+          Questions about these Terms:{" "}
+          <a href="mailto:hello@yournextaway.com" style={styles.link}>
             hello@yournextaway.com
           </a>
+          .
         </p>
+
+        <div style={styles.footer}>
+          Diablo Aquila Ltd (UK) — Company No: 17010899 —{" "}
+          <a href="mailto:hello@yournextaway.com" style={styles.link}>
+            hello@yournextaway.com
+          </a>
+        </div>
       </div>
     </main>
   );
