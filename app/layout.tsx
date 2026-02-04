@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata = {
   title: "YourNextAway – Football Trip Planner",
   description:
-    "Discover football fixtures. Build trips. Compare flights, hotels and tickets across Europe.",
+    "Discover football fixtures. Build city breaks around match dates. Compare flights, hotels, tickets, and experiences across Europe.",
   icons: {
     icon: "/favicon.png",
   },
@@ -15,6 +15,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const year = new Date().getFullYear();
+
   return (
     <html lang="en">
       <head>
@@ -38,6 +40,7 @@ export default function RootLayout({
         style={{
           margin: 0,
           fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial",
+          background: "#05070d",
         }}
       >
         {children}
@@ -62,10 +65,15 @@ export default function RootLayout({
               fontSize: 13,
             }}
           >
-            <div>© {new Date().getFullYear()} YourNextAway. Operated by Diablo Aquila Ltd.</div>
+            <div>
+              © {year} YourNextAway · Operated by Diablo Aquila Ltd (UK) · Company No: 17010899
+            </div>
 
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <a href="/about" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+            <nav style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <a
+                href="/about"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 About
               </a>
               <a
@@ -74,7 +82,10 @@ export default function RootLayout({
               >
                 Privacy
               </a>
-              <a href="/terms" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+              <a
+                href="/terms"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 Terms
               </a>
               <a
@@ -89,7 +100,7 @@ export default function RootLayout({
               >
                 hello@yournextaway.com
               </a>
-            </div>
+            </nav>
           </div>
         </footer>
       </body>
