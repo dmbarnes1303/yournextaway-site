@@ -1,3 +1,6 @@
+// app/page.tsx
+import React from "react";
+
 export default function HomePage() {
   return (
     <main
@@ -99,6 +102,44 @@ export default function HomePage() {
           >
             Android App — Coming Soon
           </div>
+        </div>
+
+        {/* Quick links (internal crawl path) */}
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+            flexWrap: "wrap",
+            justifyContent: "center",
+            marginBottom: 18,
+          }}
+        >
+          {[
+            { label: "Flights", href: "/flights" },
+            { label: "Hotels", href: "/hotels" },
+            { label: "Tickets & experiences", href: "/tickets" },
+            { label: "Football tickets", href: "/football-tickets" },
+            { label: "City guides", href: "/city" },
+          ].map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              style={{
+                textDecoration: "none",
+                color: "rgba(255,255,255,0.92)",
+                padding: "10px 14px",
+                borderRadius: 999,
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.14)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                fontSize: 13,
+                fontWeight: 800,
+              }}
+            >
+              {l.label} →
+            </a>
+          ))}
         </div>
 
         <p

@@ -1,5 +1,6 @@
 import React from "react";
 import Script from "next/script";
+import Link from "next/link";
 
 export const metadata = {
   title: "YourNextAway – Football Trip Planner",
@@ -19,23 +20,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        {/* Plausible */}
-        <Script
-          src="https://plausible.io/js/pa-rpYAauHxWVcBt1XGJZ9a2.js"
-          strategy="afterInteractive"
-        />
-        <Script id="plausible-init" strategy="afterInteractive">
-          {`
-            window.plausible = window.plausible || function () {
-              (plausible.q = plausible.q || []).push(arguments)
-            };
-            plausible.init = plausible.init || function (i) { plausible.o = i || {}; };
-            plausible.init();
-          `}
-        </Script>
-      </head>
-
       <body
         style={{
           margin: 0,
@@ -43,6 +27,12 @@ export default function RootLayout({
           background: "#05070d",
         }}
       >
+        {/* Plausible (simple + safe) */}
+        <Script
+          src="https://plausible.io/js/pa-rpYAauHxWVcBt1XGJZ9a2.js"
+          strategy="afterInteractive"
+        />
+
         {children}
 
         <footer
@@ -70,30 +60,30 @@ export default function RootLayout({
             </div>
 
             <nav style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <a
+              <Link
                 href="/about"
                 style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/privacy"
                 style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
               >
                 Privacy
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/terms"
                 style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
               >
                 Terms
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
               >
                 Contact
-              </a>
+              </Link>
               <a
                 href="mailto:hello@yournextaway.com"
                 style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
