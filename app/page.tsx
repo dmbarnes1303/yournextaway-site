@@ -117,9 +117,9 @@ export default function HomePage() {
           {[
             { label: "Flights", href: "/flights" },
             { label: "Hotels", href: "/hotels" },
-            { label: "Tickets & experiences", href: "/tickets" },
-            { label: "Football tickets", href: "/football-tickets" },
-            { label: "City guides", href: "/city" },
+            { label: "Tickets & Experiences", href: "/tickets" },
+            { label: "Football Tickets", href: "/football-tickets" },
+            { label: "City Guides", href: "/city" },
           ].map((l) => (
             <a
               key={l.href}
