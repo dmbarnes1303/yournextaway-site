@@ -41,7 +41,13 @@ function Card({
       }}
     >
       {title ? (
-        <div style={{ fontWeight: 900, marginBottom: 10, letterSpacing: "-0.01em" }}>
+        <div
+          style={{
+            fontWeight: 900,
+            marginBottom: 10,
+            letterSpacing: "-0.01em",
+          }}
+        >
           {title}
         </div>
       ) : null}
@@ -92,18 +98,33 @@ function Button({
   );
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const slug = params.slug as CitySlug;
+// Next 16 can provide params as a Promise in certain dynamic routes.
+// So we treat it as async and await it.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }> | { slug: string };
+}) {
+  const resolved = await Promise.resolve(params);
+  const slug = resolved.slug as CitySlug;
+
   const city = CITY_GUIDES[slug];
   if (!city) return {};
+
   return {
     title: city.seoTitle,
     description: city.seoDescription,
   };
 }
 
-export default function CitySlugPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug as CitySlug;
+export default async function CitySlugPage({
+  params,
+}: {
+  params: Promise<{ slug: string }> | { slug: string };
+}) {
+  const resolved = await Promise.resolve(params);
+  const slug = resolved.slug as CitySlug;
+
   const city = CITY_GUIDES[slug];
   if (!city) return notFound();
 
@@ -302,8 +323,8 @@ export default function CitySlugPage({ params }: { params: { slug: string } }) {
             textAlign: "center",
           }}
         >
-          Affiliate disclosure: YourNextAway may earn a commission when you click partner links and make a purchase,
-          at no extra cost to you.
+          Affiliate disclosure: YourNextAway may earn a commission when you click partner links and make a purchase, at no extra
+          cost to you.
         </div>
       </div>
     </main>
