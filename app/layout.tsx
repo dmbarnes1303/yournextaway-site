@@ -18,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Agoda / AGD domain verification */}
         <meta name="agd-partner-manual-verification" content="" />
       </head>
 
@@ -58,23 +57,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           >
             <div>
-              © {year} YourNextAway · Operated by Diablo Aquila Ltd (UK) · Company No: 17010899
+              © {year} YourNextAway · Operated by Diablo Aquila Ltd (UK) · Company
+              No: 17010899
             </div>
 
             <nav style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href="/about" style={footerLinkStyle()}>
+              <Link
+                href="/about"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 About
               </Link>
-              <Link href="/privacy" style={footerLinkStyle()}>
+              <Link
+                href="/privacy"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 Privacy
               </Link>
-              <Link href="/terms" style={footerLinkStyle()}>
+              <Link
+                href="/terms"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 Terms
               </Link>
-              <Link href="/contact" style={footerLinkStyle()}>
+              <Link
+                href="/contact"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 Contact
               </Link>
-              <a href="mailto:hello@yournextaway.com" style={footerLinkStyle()}>
+              <a
+                href="mailto:hello@yournextaway.com"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+              >
                 hello@yournextaway.com
               </a>
             </nav>
@@ -83,11 +98,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
-}
-
-function footerLinkStyle(): React.CSSProperties {
-  return {
-    color: "rgba(255,255,255,0.85)",
-    textDecoration: "none",
-  };
 }
