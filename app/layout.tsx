@@ -18,6 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Agoda manual verification (must be EXACT — no content attr) */}
         <meta name="agd-partner-manual-verification" />
       </head>
 
@@ -28,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           background: "#05070d",
         }}
       >
-        {/* Plausible (simple + safe) */}
         <Script
           src="https://plausible.io/js/pa-rpYAauHxWVcBt1XGJZ9a2.js"
           strategy="afterInteractive"
@@ -64,31 +67,46 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link
                 href="/about"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                }}
               >
                 About
               </Link>
               <Link
                 href="/privacy"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                }}
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                }}
               >
                 Terms
               </Link>
               <Link
                 href="/contact"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                }}
               >
                 Contact
               </Link>
               <a
                 href="mailto:hello@yournextaway.com"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                }}
               >
                 hello@yournextaway.com
               </a>
