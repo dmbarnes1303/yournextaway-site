@@ -1,3 +1,4 @@
+// app/layout.tsx
 import React from "react";
 import Script from "next/script";
 import Link from "next/link";
@@ -11,15 +12,16 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const year = new Date().getFullYear();
 
   return (
     <html lang="en">
+      <head>
+        {/* Agoda / AGD domain verification */}
+        <meta name="agd-partner-manual-verification" content="" />
+      </head>
+
       <body
         style={{
           margin: 0,
@@ -60,34 +62,19 @@ export default function RootLayout({
             </div>
 
             <nav style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link
-                href="/about"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-              >
+              <Link href="/about" style={footerLinkStyle()}>
                 About
               </Link>
-              <Link
-                href="/privacy"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-              >
+              <Link href="/privacy" style={footerLinkStyle()}>
                 Privacy
               </Link>
-              <Link
-                href="/terms"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-              >
+              <Link href="/terms" style={footerLinkStyle()}>
                 Terms
               </Link>
-              <Link
-                href="/contact"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-              >
+              <Link href="/contact" style={footerLinkStyle()}>
                 Contact
               </Link>
-              <a
-                href="mailto:hello@yournextaway.com"
-                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-              >
+              <a href="mailto:hello@yournextaway.com" style={footerLinkStyle()}>
                 hello@yournextaway.com
               </a>
             </nav>
@@ -96,4 +83,11 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+function footerLinkStyle(): React.CSSProperties {
+  return {
+    color: "rgba(255,255,255,0.85)",
+    textDecoration: "none",
+  };
 }
