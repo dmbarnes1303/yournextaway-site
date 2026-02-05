@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <meta name="agd-partner-manual-verification" content="" />
+        <meta name="agd-partner-manual-verification" />
       </head>
 
       <body
